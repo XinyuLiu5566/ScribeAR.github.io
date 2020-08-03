@@ -5,6 +5,7 @@ import {getAuthenticatedClient, upload123} from '../../LogIn/graphService';
 import config from '../../LogIn/Config';
 import MuiAlert from '@material-ui/lab/Alert';
 import Snackbar from '@material-ui/core/Snackbar';
+import store from '../../../store/';
 
 
 function Alert(props) {
@@ -16,6 +17,7 @@ function Alert(props) {
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
 const recognition = new SpeechRecognition()
+
 recognition.lang = 'en-US'
 recognition.continuous = false
 recognition.interimResults = true
@@ -39,7 +41,11 @@ export class Recognition extends React.PureComponent {
      }
 
      componentDidMount() {
+        if (store.desiredAPI == 'azure') {
+          this.stop()
+        }  else {
           this.start()
+        }
      }
      
 
@@ -50,7 +56,9 @@ export class Recognition extends React.PureComponent {
                return
           if (this.props.isRecording)
                this.start()
-          else this.stop()
+          else {
+              this.stop()
+          }
      }
 
      start() {

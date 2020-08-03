@@ -7,6 +7,8 @@ import Draggable from '../DnD/Draggable'
 import Droppable from '../DnD/Droppable'
 import './index.css'
 
+import Stereo from "./Stereo/index"
+
 
 const Wrapper = styled.div`
     width:100%;
@@ -26,14 +28,13 @@ const droppableStyle = {
 export default function MiddleSpace(props) {
   var h = props.height
   const mic = useSelector((state) => state.mic)
+  const stereoMic = useSelector((state) => state.steromic)
   const color = useSelector((state) => state.invertColors)
- //  var wid = "calc(100vh - 2 * " + paddingString + ")"
- //  if(window.innerHeight > window.innerWidth) {
- //    wid = "calc(100vw - 2 * " + paddingString + ")"
- //  }
+  const isstereo = useSelector((state) => state.stereo)
 
-  if (props.color == 'black'){
-      return ( <div className="MiddleSpace">    
+    if (isstereo == 0){//mono
+        if (props.color == 'black'){
+            return ( <div className="MiddleSpace">
             <Wrapper>
                   <Droppable className = "d1" id = "dr1" style = {{
                     width:'25vw',
@@ -41,11 +42,11 @@ export default function MiddleSpace(props) {
                     margin: '1px'}}>
                     <div className = "show1">
                       <Draggable id = "item1" style = {{margin:'0.5px'}}>
-                        
+                          {/* change Index to Stereo for test purpose*/}
                           <Index ismic = {mic} iscolor = {color} style={{
                           position:"relative",
-                          }}/> 
-                       
+                          }}/>
+
                       </Draggable>
                       </div>
                   </Droppable>
@@ -71,16 +72,17 @@ export default function MiddleSpace(props) {
               </Wrapper>
           </div> )
   }else{
-    return ( <div className="MiddleSpace">    
+    return ( <div className="MiddleSpace">
             <Wrapper>
                   <Droppable className = "d2" id = "dr1" style = {{
                     width:'25vw',
                     height: '34vh',
                     margin: '1px'}}>
-                    <div className = "show1">      
+                    <div className = "show1">
+                      {/* change Index to Stereo for test purpose*/}
                       <Draggable id = "item1" style = {{margin:'0.5px'}}><Index ismic = {mic} iscolor = {color} style={{
                         position:"relative",
-                      }}/> 
+                      }}/>
                     </Draggable>
                     </div>
                   </Droppable>
@@ -106,4 +108,84 @@ export default function MiddleSpace(props) {
               </Wrapper>
           </div> )
   }
+    }else{
+        if (props.color == 'black'){
+      return ( <div className="MiddleSpace">
+            <Wrapper>
+                  <Droppable className = "d1" id = "dr1" style = {{
+                    width:'25vw',
+                    height: '34vh',
+                    margin: '1px'}}>
+                    <div className = "show1">
+                      <Draggable id = "item1" style = {{margin:'0.5px'}}>
+                          {/* change Index to Stereo for test purpose*/}
+                          < Stereo ismic = {stereoMic} iscolor = {color} style={{
+                          position:"relative",
+                          }}/>
+
+                      </Draggable>
+                      </div>
+                  </Droppable>
+                  <Droppable className = "d1" id = "dr2" style = {{
+                    width:'25vw',
+                    height: '34vh',
+                    margin: '1px'}}>
+                      <div className = "show1"></div>
+                  </Droppable>
+                  <Droppable className = "d1" id = "dr2" style = {{
+                    width:'25vw',
+                    height: '34vh',
+                    margin: '1px'}}>
+                      <div className = "show1"></div>
+                  </Droppable>
+                  <Droppable className = "d1" id = "dr2" style = {{
+                    width:'25vw',
+                    height: '34vh',
+                    margin: '1px'}}>
+                      <div className = "show1"></div>
+                  </Droppable>
+
+              </Wrapper>
+          </div> )
+  }else{
+    return ( <div className="MiddleSpace">
+            <Wrapper>
+                  <Droppable className = "d2" id = "dr1" style = {{
+                    width:'25vw',
+                    height: '34vh',
+                    margin: '1px'}}>
+                    <div className = "show1">
+                      {/* change Index to Stereo for test purpose*/}
+                      <Draggable id = "item1" style = {{margin:'0.5px'}}><Stereo ismic = {stereoMic} iscolor = {color} style={{
+                        position:"relative",
+                      }}/>
+                    </Draggable>
+                    </div>
+                  </Droppable>
+                  <Droppable className = "d2" id = "dr2" style = {{
+                    width:'25vw',
+                    height: '34vh',
+                    margin: '1px'}}>
+                      <div className = "show1"></div>
+                  </Droppable>
+                  <Droppable className = "d2" id = "dr2" style = {{
+                    width:'25vw',
+                    height: '34vh',
+                    margin: '1px'}}>
+                      <div className = "show1"></div>
+                  </Droppable>
+                  <Droppable className = "d2" id = "dr2" style = {{
+                    width:'25vw',
+                    height: '34vh',
+                    margin: '1px'}}>
+                      <div className = "show1"></div>
+                  </Droppable>
+
+              </Wrapper>
+          </div> )
+  }
+
+    }
+
+
 }

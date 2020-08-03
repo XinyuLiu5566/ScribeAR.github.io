@@ -42,7 +42,7 @@ export function AuthNavItem(props) {
         return (
             <Button aria-controls="simple-menu" 
         aria-haspopup="true" variant="contained" 
-        variant="text" color="secondary" 
+        variant="text"
         onClick={props.authButtonMethod} 
         startIcon={<EmojiEmotionsIcon/>}>Log Out
         </Button>
@@ -69,7 +69,7 @@ export function AuthNavItem(props) {
 
         <Button aria-controls="simple-menu" 
         aria-haspopup="true" variant="contained" 
-        variant="text" color="secondary" 
+        variant="text"
         onClick={props.authButtonMethod} 
         startIcon={<AccountCircleIcon/>}>Sign In
         </Button>

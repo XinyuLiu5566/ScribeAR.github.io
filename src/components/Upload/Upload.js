@@ -10,8 +10,6 @@ import microsoftOnedrive from '@iconify/icons-mdi/microsoft-onedrive';
 import Menu from '@material-ui/core/Menu';
 import Fade from '@material-ui/core/Fade';
 import MenuItem from '@material-ui/core/MenuItem';
-import { Icon } from '@fluentui/react/lib/Icon';
-import { initializeIcons } from '@uifabric/icons';
 import { FontIcon } from 'office-ui-fabric-react/lib/Icon';
 import { mergeStyles, registerIcons } from 'office-ui-fabric-react/lib/Styling';
 import { ImageIcon } from 'office-ui-fabric-react/lib/Icon';

@@ -1,13 +1,13 @@
-.plus-and-minus {
-     position:absolute;
+.setting-wrapper {
      display: inline-block;
+
 }
 
 
 .minus {
-  left: 2vw;
+     left:10vw;
 }
 
 .plus {
-  left: 2.5vw;
-}
+     left:10.5vw;
+} 

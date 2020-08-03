@@ -37,3 +37,35 @@
   visibility: hidden;
 
 }
+.tutorial{
+  margin:0;
+}
+
+.scroll {
+  position: relative;
+  left: 50vw;
+  top: 50vh;
+}
+
+.captionsSpace::-webkit-scrollbar {
+  display: none;
+}
+
+/* ::-webkit-scrollbar {
+  width: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}  */

@@ -1,19 +1,32 @@
-.audio_visual {
-     position: relative;
+.audio_result{
+     position: absolute;
+     top:0;
+     left:1vw;
      display: inline-block;
-     height: 0vh;
-     width: 40vh;
+     height: 8vh;
+     width: 20vh;
+}
+
+.audio_visual {
+     position: absolute;
+     top: 0;
+     /*right: 2vw;*/
+     left: 10vw;
+     display: inline;
+     height: 8vh;
+     width: 20vh;
 }
 
 
 
-.audio_plus {
-     left: 9vw;
-     text-align: center;
-     padding: 24px 40px;
-     font-family: 'Arial'; font-size: 20px;
-     border-radius: 15%;
-     cursor: pointer;
-     width: 6vw;
-     height: 6vh;
-}
+/*.audio_plus {*/
+/*     right:-10vh;*/
+/*     text-align: center;*/
+/*     padding: 14px 40px;*/
+/*     font-family: 'Arial';*/
+/*     font-size: 20px;*/
+/*     border-radius: 15%;*/
+/*     cursor: pointer;*/
+/*     width: 10vw;*/
+
+/*}*/

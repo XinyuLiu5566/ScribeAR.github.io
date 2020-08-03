@@ -8,10 +8,11 @@ https://www.w3schools.com/howto/howto_css_switch.asp and modified slightly */
 }
 .switch {
      position: absolute;
-     left: 9vw;
+     left: 10vw;
      display: inline-block;
-     height: 6vh;
-     width: 12vh;
+     height: 8vh;
+     transform: scale(.8);
+     width: 14vh;
 }
 
 /* Hide default HTML checkbox */
