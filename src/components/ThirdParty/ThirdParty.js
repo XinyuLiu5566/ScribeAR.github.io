@@ -91,7 +91,7 @@ export default function ThirdParty() {
 
 
 
-                <h3>Microsoft</h3>
+                {/* <h3>Microsoft</h3>
                 <Divider/>
                 <div>
                 <LogIn/>
@@ -108,7 +108,7 @@ export default function ThirdParty() {
                 <br></br>
                 <h3>Google</h3>
                 <Divider/>
-                <h3>something goes here later</h3>
+                <h3>something goes here later</h3> */}
             </div>
        );
        }

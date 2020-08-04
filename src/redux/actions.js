@@ -104,6 +104,9 @@ export const submenu1 = () =>{
 export const submenu2 = () =>{
      return { type: 'SUBMENU_2'}
 }
+export const submenu3 = () => {
+     return { type: 'SUBMENU_3'}
+}
 export const next_page = () => {
      return { type: 'NEXT_PAGE'}
 }

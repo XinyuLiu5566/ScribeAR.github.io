@@ -43,6 +43,9 @@ import MenuHider from '../PlaceHolder/MenuHider'
 import './index.css'
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+import { submenu3 } from '../../redux/actions';
+
+
 const drawerWidth = '21vw';//drawer width
 
 const useStyles = makeStyles((theme) => ({
@@ -185,7 +188,7 @@ export default function PersistentDrawerLeft(props) {
                   edge="start"
                   className={clsx(classes.menuButton, open && classes.hide)}
                 >
-                  <MenuIcon />
+                  <MenuIcon onClick={() => dispatch(submenu3())}/>
                 </IconButton>
 
 
@@ -199,33 +202,17 @@ export default function PersistentDrawerLeft(props) {
                     {hiddenText}
                   </div>
                 </div>
-                 <Button aria-controls="simple-menu" aria-haspopup="true" variant="contained" variant="text" color="secondary" onClick={handleClick} startIcon={<ShareIcon/>}>Share</Button>
-                 <Menu
-                  id="simple-menu"
-                  anchorEl={anchorEl}
-                  keepMounted
-                  open={Boolean(anchorEl)}
-                  onClose={handleClose}
-                >
-                  <Tooltip TransitionComponent={Fade} title="Share through emails" arrow>
-                  <MenuItem onClick={handleClose}>
-                    <EmailShareButton subject="Transcript History">
-                      <Button startIcon={<MailIcon/>}> EMAIL</Button>
-                    </EmailShareButton>
-                  </MenuItem>
-                  </Tooltip>
-                  <Tooltip TransitionComponent={Fade} title="Download the transcript as a .txt file" arrow>
-                  <MenuItem onClick={handleClose}>
-                    <Button variant="contained" variant="text" onClick={new Recognition().downloadTxtFile} startIcon={<SaveIcon fontSize='large'/>}>Download</Button>
-                  </MenuItem>
-                  </Tooltip>
-                  {/* <Tooltip TransitionComponent={Fade} title="Upload the transcript to OneDrive" arrow> */}
-                  <MenuItem onClick={handleClose}>
-                    <Upload/>                  
-                  </MenuItem>
-                  {/* </Tooltip> */}
-                </Menu>
-                <LogIn/>
+                <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                onClick={handleDrawerOpen}
+                edge="start"
+                className={clsx(classes.menuButton, open && classes.hide)}
+              >
+                <ShareIcon onClick={() => dispatch(submenu3())} />
+              </IconButton>
+                 {/* <Button aria-controls="simple-menu" aria-haspopup="true" variant="contained" variant="text" color="secondary" onClick={handleClick} startIcon={<ShareIcon/>}></Button> */}
+                 
                 
               </div>
           </div>
@@ -299,33 +286,15 @@ export default function PersistentDrawerLeft(props) {
                   {hiddenText}
                 </div>
               </div>
-               <Button aria-controls="simple-menu" aria-haspopup="true" variant="contained" variant="text" color="secondary" onClick={handleClick} startIcon={<ShareIcon/>}>Share</Button>
-               <Menu
-                id="simple-menu"
-                anchorEl={anchorEl}
-                keepMounted
-                open={Boolean(anchorEl)}
-                onClose={handleClose}
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                onClick={handleDrawerOpen}
+                edge="start"
+                className={clsx(classes.menuButton, open && classes.hide)}
               >
-                <Tooltip TransitionComponent={Fade} title="Share through emails" arrow>
-                <MenuItem onClick={handleClose}>
-                  <EmailShareButton subject="Transcript History">
-                    <Button startIcon={<MailIcon/>}> EMAIL</Button>
-                  </EmailShareButton>
-                </MenuItem>
-                </Tooltip>
-                <Tooltip TransitionComponent={Fade} title="Download the transcript as a .txt file" arrow>
-                <MenuItem onClick={handleClose}>
-                  <Button variant="contained" variant="text" onClick={new Recognition().downloadTxtFile} startIcon={<SaveIcon fontSize='large'/>}>Download</Button>
-                </MenuItem>
-                </Tooltip>
-                {/* <Tooltip TransitionComponent={Fade} title="Upload the transcript to OneDrive" arrow> */}
-                <MenuItem onClick={handleClose}>
-                  <Upload/>                  
-                </MenuItem>
-                {/* </Tooltip> */}
-              </Menu>
-              <LogIn/>
+                <ShareIcon onClick={() => dispatch(submenu3())}/>
+              </IconButton>              
               
             </div>
         </div>
@@ -399,8 +368,17 @@ export default function PersistentDrawerLeft(props) {
                   {hiddenText}
                 </div>
               </div>
-               <Button aria-controls="simple-menu" aria-haspopup="true" variant="contained" variant="text" color="secondary" onClick={handleClick} startIcon={<ShareIcon/>}>Share</Button>
-               <Menu
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                onClick={handleDrawerOpen}
+                edge="start"
+                className={clsx(classes.menuButton, open && classes.hide)}
+              >
+                <ShareIcon onClick={() => dispatch(submenu3())}/>
+              </IconButton>
+               {/* <Button aria-controls="simple-menu" aria-haspopup="true" variant="contained" variant="text" onClick={handleDrawerOpen} startIcon={<ShareIcon/>}>Share</Button> */}
+               {/* <Menu
                 id="simple-menu"
                 anchorEl={anchorEl}
                 keepMounted
@@ -419,14 +397,10 @@ export default function PersistentDrawerLeft(props) {
                   <Button variant="contained" variant="text" onClick={new Recognition().downloadTxtFile} startIcon={<SaveIcon fontSize='large'/>}>Download</Button>
                 </MenuItem>
                 </Tooltip>
-                {/* <Tooltip TransitionComponent={Fade} title="Upload the transcript to OneDrive" arrow> */}
                 <MenuItem onClick={handleClose}>
                   <Upload/>                  
                 </MenuItem>
-                {/* </Tooltip> */}
-              </Menu>
-              <LogIn/>
-              
+              </Menu> */}
             </div>
         </div>
 
